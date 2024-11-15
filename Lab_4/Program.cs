@@ -86,11 +86,19 @@ namespace Lab_4
             {
                 ListTask.HashSet();
             }
-            if (z == 4) 
-            { 
-                string fileName = "textEng.txt"; //чтение файла
-                ListTask.Bukv(fileName);
-            }
+             if (z == 4) 
+             {
+                 try
+                 {
+                     string fileName = "textEng.txt"; //чтение файла
+                     ListTask.Bukv(fileName);
+                 }
+                 catch
+                 {
+                     Console.WriteLine("Не получилось открыть файл!");
+                     return;
+                 }
+             }
         }
     }
 }
