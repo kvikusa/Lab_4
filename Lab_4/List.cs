@@ -34,57 +34,51 @@ namespace Lab_4
             return L1.Except(L2).ToList();
         }
 
+        
         //проверяет симметричность списка
-        public static bool Symmetric(LinkedList<int> list, int i, int j)
-        {
-            var first = list.First;
-            var last = list.Last;
+public static bool Symmetric(LinkedList<string> list, int i, int j)
+{
+    var first = list.First;
+    var last = list.Last;
 
-            for (int k = 0; k <= i; k++) //присваеваем i-му эл-ту значение
-                first = first.Next;
+    for (int k = 0; k <= i; k++) //присваеваем i-му эл-ту значение
+        first = first.Next;
 
-            for (int k = 0; k <= list.Count - 1 - j; k++)
-                last = last.Previous;
+    for (int k = 0; k <= list.Count - 1 - j; k++)
+        last = last.Previous;
 
-            while (first != last && first.Previous != last)
-            {
-                if (first.Value != last.Value)
-                    return false; // Если элементы не равны, возвращаем false
+    while (first != last && first.Previous != last)
+    {
+        if (first.Value != last.Value)
+            return false; // Если элементы не равны, возвращаем false
 
-                first = first.Next; //присваеваем следущее значение
-                last = last.Previous; //присваеваем следущее значение с конца
-            }
-            return true; // Если все элементы равны, возвращаем true
-        }
-        public static void PrintListLink(LinkedList<int> list)
-        {
-            foreach (int n in list)
-            {
-                Console.Write(n + " ");
-            }
-            Console.WriteLine();
-        }
+        first = first.Next; //присваеваем следущее значение
+        last = last.Previous; //присваеваем следущее значение с конца
+    }
+    return true; // Если все элементы равны, возвращаем true
+}
+public static void PrintListLink(LinkedList<string> list)
+{
+    foreach (string n in list)
+    {
+        Console.Write(n + " ");
+    }
+    Console.WriteLine();
+}
 
-        public static void VvodLinkList(LinkedList<int> l)
-        {
-            while (true)
-            {
-                Console.Write("Введите число или 'stop': ");
-                string input = Console.ReadLine();
+public static void VvodLinkList(LinkedList<string> l)
+{
+    while (true)
+    {
+        Console.Write("Введите число или 'stop': ");
+        string input = Console.ReadLine();
+        
+        if (input.ToLower() == "stop")
+            break;
 
-                if (input.ToLower() == "stop")
-                    break;
-
-                if (int.TryParse(input, out int number))
-                {
-                    l.AddLast(number);
-                }
-                else
-                {
-                    Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число или 'stop'.");
-                }
-            }
-        }
+        l.AddLast(input);
+    }
+}
 
         //Есть перечень названий шоколада. Определить для каждого наименования шоколада, какие из них нравятся всем n сладкоежкам, какие — некоторым из сладкоежек, и какие — никому из сладкоежек.
         public static void HashSet()
