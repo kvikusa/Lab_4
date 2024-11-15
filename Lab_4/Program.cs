@@ -47,19 +47,19 @@ namespace Lab_4
             }
             if (z == 2) 
             {
-                LinkedList<int> list = new LinkedList<int>();
-                Console.WriteLine("Введите целые числа для заполнения списка. Введите 'stop' для завершения ввода.");
+                LinkedList<string> list = new LinkedList<string>();
+                Console.WriteLine("Заполните список. Введите 'stop' для завершения ввода.");
                 ListTask.VvodLinkList(list);
-
+            
                 if (list.Count == 0)
                 {
                     Console.WriteLine("Список пуст. Программа завершена.");
                     return;
                 }
-
+            
                 Console.WriteLine("список: " );
                 ListTask.PrintListLink(list);
-
+            
                 int i, j;
                 while (true)
                 {
@@ -69,7 +69,7 @@ namespace Lab_4
                     else
                         Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число в указанном диапазоне.");
                 }
-
+            
                 while (true)
                 {
                     Console.Write("Введите индекс j (от {0} до {1}): ", i + 1, list.Count-1);
