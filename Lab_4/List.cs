@@ -9,10 +9,6 @@ namespace Lab_4
 {
     public class ListTask
     {
-        //поля
-        //аксессоры(свойства)
-        //Конструкторы
-
         //методы
         //заполнение списка случайными числами
         public static void ListInt<T>(int n, List <string> L) 
